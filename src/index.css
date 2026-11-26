@@ -1,0 +1,441 @@
+@import "tailwindcss";
+
+:root {
+  /* Surface Hierarchy - Dark Mode (Bravo Studio Dark) */
+  --bg-app: #111318;
+  --bg-titlebar: #15181f;
+  --bg-activity: #14171e;
+  --bg-sidebar: #181c24;
+  --bg-workspace: #1c2029;
+  --bg-card: #222733;
+  --bg-elevated: #292f3d;
+  --bg-input: #151820;
+  --bg-code: #14171e;
+  --bg-code-header: #1a1e27;
+
+  /* Borders */
+  --border-subtle: #262c3a;
+  --border-default: #313847;
+  --border-strong: #434c5e;
+
+  /* Typography */
+  --text-primary: #eceff4;
+  --text-secondary: #9aa5b8;
+  --text-muted: #647087;
+
+  /* Brand & Accents (Bravo ERP Green + IDE Accents) */
+  --bravo-primary: #00a859;
+  --bravo-primary-hover: #00c267;
+  --bravo-surface: rgba(0, 168, 89, 0.14);
+  --bravo-border: rgba(0, 168, 89, 0.42);
+
+  --accent-blue: #3b82f6;
+  --accent-blue-surface: rgba(59, 130, 246, 0.14);
+  --accent-blue-border: rgba(59, 130, 246, 0.4);
+
+  /* User Message Bubble */
+  --user-bubble-bg: #166534;
+  --user-bubble-border: rgba(34, 197, 94, 0.35);
+  --user-bubble-text: #f0fdf4;
+
+  /* SQL Syntax Highlighting - Dark Mode (High Contrast WCAG AAA) */
+  --sql-keyword: #c792ea;
+  --sql-function: #82aaff;
+  --sql-string: #a3be8c;
+  --sql-number: #f78c6c;
+  --sql-comment: #6e7891;
+  --sql-ident: #e5e9f0;
+
+  /* Table Zebra & Hover */
+  --table-row-alt: rgba(255, 255, 255, 0.018);
+  --table-row-hover: rgba(0, 168, 89, 0.08);
+
+  /* Scrollbar */
+  --scrollbar-thumb: #313847;
+  --scrollbar-thumb-hover: #454e62;
+
+  /* Smart Patch Diff Colors - Dark Mode */
+  --diff-del-bg: rgba(244, 63, 94, 0.10);
+  --diff-del-bg-hover: rgba(244, 63, 94, 0.17);
+  --diff-del-header-bg: rgba(244, 63, 94, 0.15);
+  --diff-del-border: rgba(244, 63, 94, 0.30);
+  --diff-del-text: #ffe4e6;
+  --diff-del-accent: #fda4af;
+  --diff-del-gutter: rgba(253, 164, 175, 0.72);
+  --diff-del-badge-bg: rgba(244, 63, 94, 0.14);
+
+  --diff-add-bg: rgba(16, 185, 129, 0.10);
+  --diff-add-bg-hover: rgba(16, 185, 129, 0.17);
+  --diff-add-header-bg: rgba(16, 185, 129, 0.15);
+  --diff-add-border: rgba(16, 185, 129, 0.30);
+  --diff-add-text: #d1fae5;
+  --diff-add-accent: #6ee7b7;
+  --diff-add-gutter: rgba(110, 231, 183, 0.72);
+  --diff-add-badge-bg: rgba(16, 185, 129, 0.14);
+
+  --diff-warn-bg: rgba(245, 158, 11, 0.14);
+  --diff-warn-border: rgba(245, 158, 11, 0.35);
+  --diff-warn-text: #fcd34d;
+  --diff-warn-accent: #fbbf24;
+}
+
+html.light {
+  /* Surface Hierarchy - Light Mode (Bravo Studio Daylight - Low Glare) */
+  --bg-app: #eef1f5;
+  --bg-titlebar: #e6eaef;
+  --bg-activity: #eaeef3;
+  --bg-sidebar: #f2f4f8;
+  --bg-workspace: #f7f9fc;
+  --bg-card: #ffffff;
+  --bg-elevated: #eaeff5;
+  --bg-input: #ffffff;
+  --bg-code: #fafbfc;
+  --bg-code-header: #f0f3f8;
+
+  /* Borders */
+  --border-subtle: #e1e6ef;
+  --border-default: #cfd7e3;
+  --border-strong: #b2bfd0;
+
+  /* Typography */
+  --text-primary: #1d2430;
+  --text-secondary: #4e5969;
+  --text-muted: #86909c;
+
+  /* Brand & Accents */
+  --bravo-primary: #107c41;
+  --bravo-primary-hover: #0d6635;
+  --bravo-surface: rgba(16, 124, 65, 0.1);
+  --bravo-border: rgba(16, 124, 65, 0.35);
+
+  --accent-blue: #0969da;
+  --accent-blue-surface: rgba(9, 105, 218, 0.1);
+  --accent-blue-border: rgba(9, 105, 218, 0.32);
+
+  /* User Message Bubble */
+  --user-bubble-bg: #107c41;
+  --user-bubble-border: #0d6635;
+  --user-bubble-text: #ffffff;
+
+  /* SQL Syntax Highlighting - Light Mode */
+  --sql-keyword: #7c3aed;
+  --sql-function: #0550ae;
+  --sql-string: #116329;
+  --sql-number: #b45309;
+  --sql-comment: #57606a;
+  --sql-ident: #1f2328;
+
+  /* Table Zebra & Hover */
+  --table-row-alt: rgba(15, 23, 42, 0.022);
+  --table-row-hover: rgba(16, 124, 65, 0.07);
+
+  /* Scrollbar */
+  --scrollbar-thumb: #c5cdd8;
+  --scrollbar-thumb-hover: #9aa5b4;
+
+  /* Smart Patch Diff Colors - Light Mode (High Contrast) */
+  --diff-del-bg: #fff1f2;
+  --diff-del-bg-hover: #ffe4e6;
+  --diff-del-header-bg: #ffe4e6;
+  --diff-del-border: #fda4af;
+  --diff-del-text: #881337;
+  --diff-del-accent: #be123c;
+  --diff-del-gutter: #9f1239;
+  --diff-del-badge-bg: #ffe4e6;
+
+  --diff-add-bg: #ecfdf5;
+  --diff-add-bg-hover: #d1fae5;
+  --diff-add-header-bg: #d1fae5;
+  --diff-add-border: #6ee7b7;
+  --diff-add-text: #064e3b;
+  --diff-add-accent: #047857;
+  --diff-add-gutter: #065f46;
+  --diff-add-badge-bg: #d1fae5;
+
+  --diff-warn-bg: #fef3c7;
+  --diff-warn-border: #f59e0b;
+  --diff-warn-text: #92400e;
+  --diff-warn-accent: #b45309;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-app);
+    color: var(--text-primary);
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    transition: background-color 0.18s ease, color 0.18s ease;
+    overflow: hidden;
+  }
+
+  code, pre, kbd, .font-mono {
+    font-family: "JetBrains Mono", "Fira Code", "Cascadia Code", Consolas, "Courier New", monospace;
+  }
+}
+
+/* SQL Token Classes used by SqlBlock */
+.sql-token-kw {
+  color: var(--sql-keyword);
+  font-weight: 600;
+}
+
+.sql-token-fn {
+  color: var(--sql-function);
+  font-weight: 500;
+}
+
+.sql-token-str {
+  color: var(--sql-string);
+}
+
+.sql-token-num {
+  color: var(--sql-number);
+}
+
+.sql-token-cmt {
+  color: var(--sql-comment);
+  font-style: italic;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+/* Markdown Content Typography & Tables */
+.bravo-markdown-body {
+  color: var(--text-primary);
+  font-family: inherit;
+  word-break: break-word;
+}
+
+.bravo-markdown-body p {
+  margin-top: 0;
+  margin-bottom: 0.65rem;
+  line-height: 1.6;
+}
+
+.bravo-markdown-body p:last-child {
+  margin-bottom: 0;
+}
+
+.bravo-markdown-body h1,
+.bravo-markdown-body h2,
+.bravo-markdown-body h3,
+.bravo-markdown-body h4 {
+  color: var(--text-primary);
+  font-weight: 600;
+  margin-top: 1rem;
+  margin-bottom: 0.45rem;
+  line-height: 1.35;
+}
+
+.bravo-markdown-body h1:first-child,
+.bravo-markdown-body h2:first-child,
+.bravo-markdown-body h3:first-child,
+.bravo-markdown-body h4:first-child {
+  margin-top: 0;
+}
+
+.bravo-markdown-body h1 {
+  font-size: 1.05rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.bravo-markdown-body h2 {
+  font-size: 0.95rem;
+}
+
+.bravo-markdown-body h3 {
+  font-size: 0.875rem;
+  color: var(--bravo-primary);
+}
+
+.bravo-markdown-body h4 {
+  font-size: 0.825rem;
+}
+
+.bravo-markdown-body strong,
+.bravo-markdown-body b {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Inline Code */
+.bravo-markdown-body code:not(pre code) {
+  font-family: "JetBrains Mono", "Fira Code", Consolas, monospace;
+  font-size: 0.82em;
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  background-color: var(--bg-elevated);
+  color: var(--bravo-primary);
+  border: 1px solid var(--border-default);
+}
+
+/* Horizontal Rule */
+.bravo-markdown-body hr {
+  border: 0;
+  border-top: 1px solid var(--border-default);
+  margin: 0.85rem 0;
+}
+
+/* Lists */
+.bravo-markdown-body ul {
+  list-style-type: disc;
+  padding-left: 1.35rem;
+  margin-top: 0.35rem;
+  margin-bottom: 0.65rem;
+}
+
+.bravo-markdown-body ol {
+  list-style-type: decimal;
+  padding-left: 1.35rem;
+  margin-top: 0.35rem;
+  margin-bottom: 0.65rem;
+}
+
+.bravo-markdown-body li {
+  margin-bottom: 0.25rem;
+  line-height: 1.55;
+}
+
+.bravo-markdown-body li > ul,
+.bravo-markdown-body li > ol {
+  margin-top: 0.2rem;
+  margin-bottom: 0.2rem;
+}
+
+/* Tables (Markdown Tables) */
+.bravo-markdown-body table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 0.75rem 0;
+  font-size: 0.78rem;
+  border: 1px solid var(--border-default);
+  border-radius: 8px;
+  overflow: hidden;
+  display: table;
+}
+
+.bravo-markdown-body thead {
+  background-color: var(--bg-elevated);
+}
+
+.bravo-markdown-body th {
+  padding: 0.55rem 0.75rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-align: left;
+  border-bottom: 1px solid var(--border-default);
+  border-right: 1px solid var(--border-subtle);
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.bravo-markdown-body th:last-child {
+  border-right: none;
+}
+
+.bravo-markdown-body td {
+  padding: 0.55rem 0.75rem;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-subtle);
+  border-right: 1px solid var(--border-subtle);
+  line-height: 1.55;
+  vertical-align: top;
+}
+
+.bravo-markdown-body td:last-child {
+  border-right: none;
+}
+
+.bravo-markdown-body tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.bravo-markdown-body tbody tr:nth-child(even) {
+  background-color: var(--table-row-alt);
+}
+
+.bravo-markdown-body tbody tr:hover {
+  background-color: var(--table-row-hover);
+}
+
+/* Blockquote */
+.bravo-markdown-body blockquote {
+  margin: 0.65rem 0;
+  padding: 0.4rem 0.75rem;
+  border-left: 3px solid var(--bravo-primary);
+  background-color: var(--bravo-surface);
+  border-radius: 0 6px 6px 0;
+  color: var(--text-secondary);
+}
+
+.bravo-markdown-body blockquote p {
+  margin-bottom: 0;
+}
+
+/* Formula Callout & Inline Formula Styling */
+.bravo-formula-callout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.85rem 0;
+  padding: 0.75rem 1.25rem;
+  background-color: var(--bg-elevated);
+  border: 1px solid var(--bravo-border);
+  border-left: 4px solid var(--bravo-primary);
+  border-radius: 8px;
+  color: var(--bravo-primary);
+  font-weight: 600;
+  font-size: 0.92rem;
+  letter-spacing: 0.015em;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.bravo-inline-formula {
+  font-weight: 600;
+  color: var(--bravo-primary);
+  background-color: var(--bravo-surface);
+  border: 1px solid var(--bravo-border);
+  padding: 0.12em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+/* KaTeX custom theme override */
+.bravo-markdown-body .katex-display {
+  margin: 0.85rem 0;
+  padding: 0.75rem 1rem;
+  background-color: var(--bg-elevated);
+  border: 1px solid var(--border-default);
+  border-radius: 8px;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.bravo-markdown-body .katex {
+  color: var(--text-primary);
+  font-size: 1.05em;
+}
